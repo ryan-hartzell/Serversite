@@ -1,44 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="theme-color" content="#00bcd4">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-orange.min.css" />
-	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-	<title>Ryan Hartzell</title>
+    <meta name="theme-color" content="#00bcd4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-orange.min.css"/>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <title>Ryan Hartzell</title>
 
-<style type="text/css">
+    <style type="text/css">
 
-	#container-content h2 { text-align: center; color: #010101; }
+        .big-container {
+            display: table;
+        }
+        .container {
+            display: table-row;
+        }
 
-</style>
+        .cell {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 40px 40px 40px;
+        }
+
+        .big-padding {
+            width:50%;
+            vertical-align:middle;
+            display: table-cell;
+        }
+
+        .demo-card-square.mdl-card {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 20px;
+        }
+
+        .demo-card-square > .mdl-card__title {
+            color: #fff;
+        }
+
+        @media (max-width: 1200px) {
+            .cell {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        @media (max-width: 1000px) {
+            .big-padding {
+                width: 0;
+                display: none;
+            }
+            .small-padding {
+                width: 50%;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .container {
+                display: table;
+            }
+            .cell {
+                display: table-row;
+            }
+
+            .big-container {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div>
+<div class="mdl-grid">
+    <h1 class="mdl-cell mdl-cell--12-col" style="text-align:center">Welcome to Ryan Hartzell's Server!</h1>
+    <div class="big-container">
 
-	<div class="mdl-grid">
-		<h1 class="mdl-cell mdl-cell--12-col" style="text-align:center">Welcome to Ryan Hartzell's Server!</h1>
-		<div class="mdl-cell--2-offset-desktop mdl-cell mdl-cell--8-col-desktop mdl-cell--12-phone mdl-cell--10-col-tablet mdl-cell--1-offset-tablet">
-		<p>If you see this page, the nginx web server is successfully installed and
-working.</p>
-
-		<div style="margin-left:auto;margin-right:auto;">
-			<a href="/web" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-				Plex
-			</a>
-			<a href="/request" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-				Requests
-			</a>
-			<a href="/plexpy" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-				PlexPy
-			</a>
-		</div>
-		<p><em>Thank you for using nginx.</em></p>
-	</div>
+        <div class="container">
+            <div class="big-padding"></div>
+            <div class="cell">
+                <div class="small-padding"></div>
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style="background: url('img/plex.png') no-repeat center #202020; background-size: contain">
+                        <h2 class="mdl-card__title-text">Plex</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        All your movie, TV show, music, and photo collections at your fingertips, anywhere you go on all the devices you love.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/web">
+                            Go to Plex
+                        </a>
+                    </div>
+                </div>
+                <div class="small-padding"></div>
+            </div>
+            <div class="cell">
+                <div class="small-padding"></div>
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style="background: url('img/ombi.png') no-repeat center #ffffff; background-size: contain">
+                        <h2 class="mdl-card__title-text" style="color:black">Ombi (Plex Requests)</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Want to request a movie or TV show to be added to Plex? Go here and sign in with your first name!
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/request">
+                            Go to Ombi
+                        </a>
+                    </div>
+                </div>
+                <div class="small-padding"></div>
+            </div>
+            <div class="cell">
+                <div class="small-padding"></div>
+                <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand" style="background: url('img/plexpy.png') no-repeat center #202020;background-size: auto 90%;">
+                        <h2 class="mdl-card__title-text">PlexPy</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        A python based web application for monitoring, analytics and notifications for Plex Media Server (for Ryan only).
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/plexpy">
+                            Go to Plexpy
+                        </a>
+                    </div>
+                </div>
+                <div class="small-padding"></div>
+            </div>
+            <div class="big-padding"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
